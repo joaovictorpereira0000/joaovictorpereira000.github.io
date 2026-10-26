@@ -7,19 +7,19 @@
 }
 
 body {
-    background-color: #ffffff; /* Fundo geral branco limpo */
-    color: #111111; /* Texto principal preto escuro para leitura */
+    background-color: #8a2be2; /* Roxo bem vivo e brilhante (Purple Neon) */
+    color: #ffffff; /* Texto principal em branco para dar contraste */
     line-height: 1.6;
 }
 
 /* Barra de Navegação (Topo) */
 header {
-    background-color: #ffffff;
+    background-color: #111111; /* Topo preto para destacar o fundo roxo */
     padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 0px rgba(0,0,0,0.08); /* Linha sutil divisória */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,13 +28,13 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 800;
-    color: #6a1b9a; /* Roxo vibrante e elegante */
+    color: #da70d6; /* Roxo mais claro/orquídea para a logo */
     letter-spacing: 1px;
 }
 
 nav a {
     text-decoration: none;
-    color: #111111;
+    color: #ffffff;
     margin: 0 15px;
     font-weight: 600;
     font-size: 14px;
@@ -43,22 +43,23 @@ nav a {
 }
 
 nav a:hover {
-    color: #6a1b9a; /* Destaque roxo ao passar o mouse */
+    color: #da70d6;
 }
 
 /* Botão do Topo (Preto com Letra Branca) */
 .btn-nav {
-    background-color: #111111 !important;
-    color: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #111111 !important;
     padding: 10px 24px;
-    border-radius: 4px; /* Formato quadrado moderno levemente arredondado */
+    border-radius: 4px;
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
 }
 
 .btn-nav:hover {
-    background-color: #4a148c; /* Muda para roxo escuro no hover */
+    background-color: #da70d6;
+    color: #ffffff !important;
 }
 
 /* Conteúdo Principal */
@@ -68,15 +69,14 @@ main {
     padding: 0 20px;
 }
 
-/* Seções sem fundo pesado, apenas espaçadas e limpas */
+/* Seções sem fundo pesado, transparentes para mostrar o roxo brilhante */
 section {
     padding: 90px 0;
-    border-bottom: 1px solid #eeeeee; /* Divisória sutil entre os blocos */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória branca sutil */
     text-align: center;
     background: transparent; 
 }
 
-/* Remove a linha divisória da última seção */
 section:last-of-type {
     border-bottom: none;
 }
@@ -84,27 +84,27 @@ section:last-of-type {
 h1 {
     font-size: 56px;
     font-weight: 900;
-    color: #111111;
+    color: #ffffff;
     margin: 15px 0;
     letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra leve para destacar */
 }
 
 h2 {
     font-size: 36px;
     font-weight: 800;
-    color: #111111;
+    color: #ffffff;
     margin-bottom: 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Destaque sutil em roxo abaixo dos títulos */
 h2::after {
     content: '';
     display: block;
     width: 40px;
     height: 4px;
-    background-color: #6a1b9a;
+    background-color: #ffffff;
     margin: 15px auto 0 auto;
 }
 
@@ -114,15 +114,19 @@ h2::after {
 }
 
 .subtitle {
-    color: #6a1b9a; /* Roxo para o subtítulo */
+    color: #111111; /* Preto para dar um contraste legal no topo */
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 2px 10px;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 14px;
+    border-radius: 4px;
 }
 
 blockquote {
     font-style: italic;
-    color: #555555;
+    color: #f3e5f5;
     font-size: 22px;
     margin: 25px 0;
 }
@@ -131,7 +135,7 @@ blockquote {
     max-width: 650px;
     margin: 0 auto 40px auto;
     font-size: 18px;
-    color: #444444;
+    color: #ffffff;
 }
 
 /* Botões Principais (Pretos com Letras Brancas) */
@@ -159,27 +163,28 @@ blockquote {
 .btn {
     background-color: #111111;
     color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
-    background-color: #6a1b9a; /* Transiciona para roxo ao passar o mouse */
+    background-color: #000000;
     transform: translateY(-2px);
 }
 
-/* Botão Vazado com Borda Preta */
+/* Botão Vazado com Borda Branca */
 .btn-alt {
-    border: 2px solid #111111;
-    color: #111111;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     background: transparent;
 }
 
 .btn-alt:hover {
-    background-color: #111111;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #111111;
     transform: translateY(-2px);
 }
 
-/* Botão do WhatsApp Especial em Verde para Destaque de Conversão */
+/* Botão do WhatsApp Especial em Verde */
 .btn-wpp {
     background-color: #25d366;
     color: #ffffff;
@@ -199,31 +204,30 @@ ul {
 
 ul li {
     padding: 14px 0;
-    border-bottom: 1px solid #f5f5f5;
-    color: #333333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
     font-size: 16px;
     list-style-type: none;
 }
 
-/* Marcador de bolinha roxa minimalista */
 ul li::before {
-    content: "• ";
-    color: #6a1b9a;
+    content: "✨ ";
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 8px;
     vertical-align: middle;
 }
 
 /* Blocos de Informação de Endereço */
 .info-bloco {
-    background-color: #f9f9f9;
-    border-left: 4px solid #6a1b9a; /* Borda roxa de destaque */
+    background-color: #111111; /* Bloco preto para dar destaque chique */
+    border-left: 4px solid #ffffff;
     padding: 25px;
     max-width: 500px;
     margin: 30px auto;
     text-align: left;
     border-radius: 0 4px 4px 0;
+    color: #ffffff;
 }
 
 .info-bloco p {
@@ -237,12 +241,12 @@ ul li::before {
 
 .nota-mapa {
     font-size: 13px;
-    color: #888888;
+    color: #e1bfe7;
     margin-top: 20px;
     font-style: italic;
 }
 
-/* Rodapé Totalmente Preto com Letras Brancas e Roxas */
+/* Rodapé Totalmente Preto com Letras Brancas */
 footer {
     background-color: #111111;
     color: #ffffff;
@@ -265,7 +269,7 @@ footer p {
 }
 
 footer em {
-    color: #9c27b0; /* Roxo mais claro para destaque no fundo preto */
+    color: #da70d6;
     font-style: italic;
 }
 
@@ -274,7 +278,7 @@ footer em {
 }
 
 .footer-nav h4, .footer-onde h4 {
-    color: #9c27b0;
+    color: #da70d6;
     margin-bottom: 15px;
     font-size: 13px;
     letter-spacing: 2px;
@@ -289,7 +293,7 @@ footer em {
 }
 
 .footer-nav a:hover {
-    color: #9c27b0;
+    color: #da70d6;
 }
 
 .copyright {
