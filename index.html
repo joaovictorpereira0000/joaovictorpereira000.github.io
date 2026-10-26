@@ -1,111 +1,384 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caroline Vitória | Nail Designer em Jacareí - SP</title>
-    <!-- Se você tiver um arquivo de estilo para as cores e layout, ele se conecta aqui: -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caroline Vitória | Nail Designer em Jacareí - SP</title>
+<meta name="description" content="Conheça o trabalho de Caroline Vitória, nail designer em Jacareí. Confira serviços de alongamento, banho de gel, manicure e pedicure e entre em contato para agendar seu horário.">
+<meta property="og:title" content="Caroline Vitória | Nail Designer em Jacareí - SP">
+<meta property="og:description" content="Alongamento de unhas, banho de gel, manicure e pedicure em Jacareí. Agende seu horário pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07050B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#07050B; --deep:#1A0B2E; --deep2:#120821; --violet:#7C3AED; --violet2:#9333EA; --glow:#B794F6;
+  --lilac:#EDE7FA; --silver:#B9B3C9; --line:rgba(183,148,246,.22);
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--black);color:var(--lilac);font:400 1rem/1.65 'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:92px 0;position:relative}
+h2{font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.01em}
+.sub{color:var(--silver);max-width:56ch;margin:14px 0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;border:1px solid transparent;font:700 .82rem 'Manrope',sans-serif;letter-spacing:.12em;text-decoration:none;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--violet),var(--violet2));box-shadow:0 8px 30px rgba(124,58,237,.35);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(147,51,234,.55)}
+.btn.ghost{background:transparent;border-color:var(--line);box-shadow:none;color:var(--lilac)}
+.btn.ghost:hover{border-color:var(--glow);background:rgba(124,58,237,.12)}
+.btn.sm{min-height:44px;padding:0 22px;font-size:.74rem}
+
+/* header */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(7,5,11,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font:600 1.5rem 'Cormorant Garamond',serif;text-decoration:none;letter-spacing:.02em}
+.nav nav{display:flex;gap:28px;align-items:center}
+.nav nav a:not(.btn){text-decoration:none;color:var(--silver);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav nav a:not(.btn):hover{color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--lilac);border-radius:12px;width:46px;height:46px;font-size:1.3rem;cursor:pointer}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 72px;overflow:hidden;
+  background:radial-gradient(60% 55% at 85% 30%,rgba(124,58,237,.38),transparent 70%),radial-gradient(45% 45% at 5% 95%,rgba(147,51,234,.22),transparent 70%),linear-gradient(180deg,var(--black),var(--deep2) 130%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.kicker{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:.72rem;letter-spacing:.16em;font-weight:600;color:var(--glow);margin-bottom:26px}
+.hero h1{font-size:clamp(3.3rem,9vw,6.6rem);letter-spacing:.01em;background:linear-gradient(180deg,#fff 30%,#CDBBF5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote{font:italic 500 clamp(1.4rem,3vw,1.9rem) 'Cormorant Garamond',serif;color:var(--glow);margin:20px 0 14px}
+.hero p.lead{color:var(--silver);max-width:50ch;margin:0 0 34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* foto */
+.photo{position:relative;overflow:hidden;background:linear-gradient(160deg,#241042,#0E0718);border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--silver);font-size:.85rem}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo svg{width:44px;height:44px;opacity:.55;display:block;margin:0 auto 10px}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 28px 28px;box-shadow:0 0 90px rgba(124,58,237,.38)}
+.arch::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 50% at 50% 0,rgba(183,148,246,.25),transparent 70%);pointer-events:none}
+
+/* sobre */
+.about{background:linear-gradient(180deg,var(--black),var(--deep2))}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.about .photo{aspect-ratio:4/5;border-radius:28px}
+.about p{color:var(--silver);font-size:1.08rem;max-width:52ch;margin:22px 0 30px}
+
+/* serviços */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px}
+.card{background:linear-gradient(170deg,rgba(124,58,237,.12),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(183,148,246,.55);box-shadow:0 18px 50px rgba(124,58,237,.22)}
+.card .photo{height:170px;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.card .photo svg{width:54px;height:54px;color:var(--glow);opacity:.9;margin:0}
+.card .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{font-size:1.65rem}
+.card p{margin:0;color:var(--silver);font-size:.97rem;flex:1}
+.price{font-weight:700;color:var(--glow);font-size:.95rem}
+
+/* galeria */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tab{background:transparent;border:1px solid var(--line);color:var(--silver);border-radius:999px;min-height:44px;padding:0 20px;font:600 .88rem 'Manrope',sans-serif;cursor:pointer;transition:all .2s}
+.tab[aria-pressed="true"]{background:linear-gradient(135deg,var(--violet),var(--violet2));border-color:transparent;color:#fff}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.gal .photo{aspect-ratio:4/5;border-radius:22px;transition:transform .4s,box-shadow .4s}
+.gal .photo:hover{transform:scale(1.025);box-shadow:0 14px 44px rgba(124,58,237,.35)}
+.gal .photo img{transition:transform .6s}.gal .photo:hover img{transform:scale(1.06)}
+
+/* diferenciais */
+.diff{background:radial-gradient(60% 70% at 50% 0,rgba(124,58,237,.2),transparent 70%),var(--deep2)}
+.diff .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:28px;margin-top:44px}
+.item{text-align:center;padding:26px 14px;border-top:1px solid var(--line)}
+.item svg{width:38px;height:38px;color:var(--glow);margin-bottom:14px}
+.item h3{font:600 1.15rem 'Manrope',sans-serif;line-height:1.35}
+
+/* local */
+.local .box{display:grid;grid-template-columns:1fr 1fr;gap:30px;border:1px solid var(--line);border-radius:28px;padding:38px;background:linear-gradient(150deg,rgba(124,58,237,.14),rgba(255,255,255,.015))}
+.local dl{margin:26px 0}
+.local dt{font-size:.78rem;letter-spacing:.14em;color:var(--glow);font-weight:600}
+.local dd{margin:2px 0 16px;font-size:1.05rem}
+.map{min-height:260px;border-radius:20px;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;padding:24px;color:var(--silver);font-size:.9rem}
+
+/* avaliações */
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.rev figure{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:rgba(255,255,255,.025)}
+.rev blockquote{margin:0 0 14px;color:var(--lilac)}
+.rev figcaption{color:var(--glow);font-weight:600;font-size:.92rem}
+.empty{border:1px solid var(--line);border-radius:28px;padding:44px 28px;text-align:center;background:linear-gradient(150deg,rgba(124,58,237,.12),transparent)}
+.empty p{color:var(--silver);max-width:50ch;margin:0 auto 24px}
+
+/* footer */
+footer{background:var(--black);border-top:1px solid var(--line);padding:64px 0 100px;position:relative}
+footer::before{content:"";position:absolute;top:-1px;left:50%;width:min(420px,60%);height:2px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--violet2),transparent)}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+footer h3{font-size:1.9rem}
+footer h4{margin:0 0 12px;font-size:.78rem;letter-spacing:.14em;color:var(--glow)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none;color:var(--silver)}footer a:hover{color:#fff}
+footer .tag{font:italic 500 1.25rem 'Cormorant Garamond',serif;color:var(--glow);margin:14px 0 20px}
+.fine{margin-top:44px;color:#7d7590;font-size:.82rem}
+
+/* whatsapp flutuante */
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--violet),var(--violet2));color:#fff;box-shadow:0 10px 34px rgba(124,58,237,.6);transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px}
+
+@media (max-width:860px){
+  section{padding:68px 0}
+  .hero .wrap,.about .wrap,.local .box,footer .cols{grid-template-columns:1fr}
+  .hero .arch{max-width:340px;margin:0 auto;order:-1;aspect-ratio:4/4.2}
+  .hero{padding-top:104px}
+  .burger{display:block}
+  .nav nav{position:absolute;top:calc(68px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(7,5,11,.97);padding:10px 22px 20px;border-bottom:1px solid var(--line);display:none}
+  .nav nav.open{display:flex}
+  .nav nav a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav nav .btn{margin-top:16px}
+  .local .box{padding:26px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-nail" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 44V22c0-8 4-15 10-15s10 7 10 15v22z"/><path d="M19 20c0-4 1-7 3-9"/></symbol>
+  <symbol id="i-long" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 46V16L24 3l7 13v30z"/><path d="M21 18l3-6"/></symbol>
+  <symbol id="i-gel" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5c7 9 12 15 12 22a12 12 0 0 1-24 0c0-7 5-13 12-22z"/><path d="M19 29c0 3 2 5 5 5"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 26V12m6 12V8m6 16V10m6 18V16M16 26c-3-3-6-4-7-2s2 7 6 11 8 6 13 6c7 0 10-6 10-13"/></symbol>
+  <symbol id="i-foot" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10c4-3 10-1 11 6s-3 12-2 18c1 5-2 9-7 9s-7-5-6-10c1-6 5-9 5-15 0-3-1-6-1-8z"/><circle cx="34" cy="10" r="2"/><circle cx="39" cy="15" r="1.6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M24 41S7 31 7 19c0-6 4-9 8-9 4 0 7 3 9 6 2-3 5-6 9-6 4 0 8 3 8 9 0 12-17 22-17 22z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 24s8-13 21-13 21 13 21 13-8 13-21 13S3 24 3 24z"/><circle cx="24" cy="24" r="6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="7" y="7" width="14" height="14" rx="4"/><rect x="27" y="7" width="14" height="14" rx="4"/><rect x="7" y="27" width="14" height="14" rx="4"/><rect x="27" y="27" width="14" height="14" rx="4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 5l4 14 14 4-14 4-4 14-4-14-14-4 14-4z"/><path d="M38 6v8M34 10h8" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 31A16 16 0 0 1 17 10a16 16 0 1 0 21 21z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="12" width="38" height="28" rx="6"/><circle cx="24" cy="26" r="7"/><path d="M17 12l3-5h8l3 5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3a13 13 0 0 0-11 19.6L3 29l6.600-1.700A13 13 0 1 0 16 3zm0 2.300a10.700 10.700 0 1 1-5.600 19.800l-.4-.2-3.900 1 1-3.800-.3-.4A10.700 10.700 0 0 1 16 5.300zm-4.600 5.300c-.3 0-.7.100-1 .5-.4.400-1.300 1.300-1.300 3.100s1.300 3.600 1.500 3.800c.2.200 2.600 4.100 6.400 5.600 3.200 1.200 3.800.9 4.500.9.700-.1 2.200-.9 2.500-1.800.3-.9.300-1.600.2-1.800-.1-.2-.3-.3-.7-.5l-2.300-1.100c-.3-.1-.5-.2-.8.200l-1 1.200c-.2.200-.4.300-.8.100-.4-.2-1.500-.6-2.900-1.800-1.100-1-1.800-2.200-2-2.600-.2-.4 0-.6.200-.8l.6-.7c.2-.2.200-.4.400-.6.100-.3.100-.5 0-.7l-1-2.400c-.3-.6-.5-.5-.8-.5z"/></symbol>
+</svg>
 
-    <header>
-        <div class="logo">Caroline Vitória</div>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#contato">Contato</a>
-            <a href="#agendar" class="btn-nav">AGENDAR</a>
-        </nav>
-    </header>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Caroline Vitória</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <nav id="menu" aria-label="Principal">
+      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a>
+      <a class="btn sm wa" href="#">AGENDAR</a>
+    </nav>
+  </div>
+</header>
 
-    <main>
-        <!-- Seção Principal -->
-        <section id="inicio" class="hero">
-            <p class="subtitle">NAIL DESIGNER | BELEZA E CUIDADO COM AS UNHAS</p>
-            <h1>CAROLINE VITÓRIA</h1>
-            <blockquote>“Suas unhas, sua personalidade, sua beleza.”</blockquote>
-            <p>Realce sua beleza com unhas impecáveis, técnicas profissionais e um atendimento pensado especialmente para você. Descubra o cuidado e a sofisticação que suas mãos e seus pés merecem.</p>
-            <div class="buttons">
-                <a href="#agendar" class="btn">AGENDAR MEU HORÁRIO</a>
-                <a href="#servicos" class="btn-alt">CONHECER SERVIÇOS</a>
-            </div>
-        </section>
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="kicker">NAIL DESIGNER | BELEZA E CUIDADO COM AS UNHAS</span>
+      <h1>CAROLINE VITÓRIA</h1>
+      <p class="quote">“Suas unhas, sua personalidade, sua beleza.”</p>
+      <p class="lead">Realce sua beleza com unhas impecáveis, técnicas profissionais e um atendimento pensado especialmente para você. Descubra o cuidado e a sofisticação que suas mãos e seus pés merecem.</p>
+      <div class="cta">
+        <a class="btn wa" href="#">AGENDAR MEU HORÁRIO</a>
+        <a class="btn ghost" href="#servicos">CONHECER SERVIÇOS</a>
+      </div>
+    </div>
+    <div class="photo arch hero-in" data-slot="hero" style="animation-delay:.15s"></div>
+  </div>
+</section>
 
-        <!-- Seção Sobre -->
-        <section id="sobre">
-            <h2>Muito prazer, sou Caroline!</h2>
-            <p>Sou nail designer e acredito que o cuidado com as unhas vai muito além da estética: é também um momento de autoestima, beleza e cuidado pessoal. Meu objetivo é proporcionar uma experiência agradável, valorizando cada detalhe e buscando um resultado bonito, delicado e adequado ao estilo de cada cliente.</p>
-            <a href="#contato" class="btn">FALAR COM A CAROLINE</a>
-        </section>
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="photo" data-slot="sobre"></div>
+    <div>
+      <h2>Muito prazer, sou Caroline!</h2>
+      <p>Sou nail designer e acredito que o cuidado com as unhas vai muito além da estética: é também um momento de autoestima, beleza e cuidado pessoal. Meu objetivo é proporcionar uma experiência agradável, valorizando cada detalhe e buscando um resultado bonito, delicado e adequado ao estilo de cada cliente.</p>
+      <a class="btn wa" href="#">FALAR COM A CAROLINE</a>
+    </div>
+  </div>
+</section>
 
-        <!-- Seção Serviços -->
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <p>Nail designer em Jacareí com cuidados para mãos e pés. Escolha o procedimento e fale direto com a Caroline pelo WhatsApp.</p>
-        </section>
+<section id="servicos">
+  <div class="wrap">
+    <h2>Serviços</h2>
+    <p class="sub">Nail designer em Jacareí com cuidados para mãos e pés. Escolha o procedimento e fale direto com a Caroline pelo WhatsApp.</p>
+    <div class="grid" id="services"></div>
+  </div>
+</section>
 
-        <!-- Seção Galeria -->
-        <section id="galeria">
-            <h2>Galeria de trabalhos</h2>
-            <p>Alongamento, banho de gel, unhas tradicionais, manicure, pedicure e nail art.</p>
-            
-            <h3>Beleza em cada detalhe.</h3>
-            <ul>
-                <li>Atendimento personalizado</li>
-                <li>Atenção aos detalhes</li>
-                <li>Variedade de procedimentos</li>
-                <li>Cuidado com a aparência e o acabamento das unhas</li>
-                <li>Um momento dedicado à beleza e ao autocuidado</li>
-            </ul>
-        </section>
+<section id="galeria" style="background:var(--deep2)">
+  <div class="wrap">
+    <h2>Galeria de trabalhos</h2>
+    <p class="sub">Alongamento, banho de gel, unhas tradicionais, manicure, pedicure e nail art.</p>
+    <div class="tabs" id="tabs" role="group" aria-label="Categorias da galeria"></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
 
-        <!-- Seção Contato / Localização -->
-        <section id="contato">
-            <h2>Se seu próximo momento de beleza começa aqui.</h2>
-            <div class="info-bloco">
-                <p><strong>PROFISSIONAL:</strong> Caroline Vitória</p>
-                <p><strong>LOCAL:</strong> Ateliê de beleza</p>
-                <p><strong>ENDEREÇO DE REFERÊNCIA:</strong> Jardim do Vale, Jacareí — SP</p>
-            </div>
-            <div class="buttons">
-                <a href="#" class="btn">COMO CHEGAR</a>
-                <a href="#" class="btn-wpp">CHAMAR NO WHATSAPP</a>
-            </div>
-            <p class="nota-mapa">O mapa será incorporado aqui quando o endereço completo for confirmado.</p>
-        </section>
+<section class="diff">
+  <div class="wrap" style="text-align:center">
+    <h2>Beleza em cada detalhe.</h2>
+    <div class="items">
+      <div class="item"><svg><use href="#i-heart"/></svg><h3>Atendimento personalizado</h3></div>
+      <div class="item"><svg><use href="#i-eye"/></svg><h3>Atenção aos detalhes</h3></div>
+      <div class="item"><svg><use href="#i-grid"/></svg><h3>Variedade de procedimentos</h3></div>
+      <div class="item"><svg><use href="#i-spark"/></svg><h3>Cuidado com a aparência e o acabamento das unhas</h3></div>
+      <div class="item"><svg><use href="#i-moon"/></svg><h3>Um momento dedicado à beleza e ao autocuidado</h3></div>
+    </div>
+  </div>
+</section>
 
-        <!-- Depoimentos -->
-        <section class="depoimentos">
-            <h2>O que nossas clientes dizem</h2>
-            <p>Avaliações de clientes que autorizaram a publicação.</p>
-        </section>
-    </main>
+<section class="local" id="contato">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>Seu próximo momento de beleza começa aqui.</h2>
+        <dl>
+          <dt>PROFISSIONAL</dt><dd>Caroline Vitória</dd>
+          <dt>LOCAL</dt><dd id="lLocal">Ateliê de beleza</dd>
+          <dt>ENDEREÇO DE REFERÊNCIA</dt><dd id="lEnd"></dd>
+        </dl>
+        <div class="cta">
+          <a class="btn" id="route" href="#" target="_blank" rel="noopener">COMO CHEGAR</a>
+          <a class="btn ghost wa" href="#">CHAMAR NO WHATSAPP</a>
+        </div>
+      </div>
+      <div class="map" id="map">O mapa será incorporado aqui quando o endereço completo for confirmado.</div>
+    </div>
+  </div>
+</section>
 
-    <footer>
+<section id="avaliacoes" style="background:var(--deep2)">
+  <div class="wrap">
+    <h2>O que nossas clientes dizem</h2>
+    <p class="sub" style="margin-bottom:34px">Avaliações de clientes que autorizaram a publicação.</p>
+    <div id="reviews"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
         <h3>Caroline Vitória</h3>
-        <p>Nail Designer</p>
-        <p><em>Seu momento de beleza, seu jeito de brilhar.</em></p>
-        <a href="#" class="btn-wpp">FALAR NO WHATSAPP</a>
-        
-        <div class="footer-nav">
-            <h4>NAVEGAR</h4>
-            <a href="#inicio">Início</a> | 
-            <a href="#sobre">Sobre</a> | 
-            <a href="#servicos">Serviços</a> | 
-            <a href="#galeria">Galeria</a> | 
-            <a href="#contato">Contato</a>
-        </div>
+        <p style="margin:6px 0 0;color:var(--silver)">Nail Designer</p>
+        <p class="tag">Seu momento de beleza, seu jeito de brilhar.</p>
+        <a class="btn sm wa" href="#">FALAR NO WHATSAPP</a>
+      </div>
+      <div>
+        <h4>NAVEGAR</h4>
+        <ul><li><a href="#inicio">Início</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li></ul>
+      </div>
+      <div>
+        <h4>ONDE ESTAMOS</h4>
+        <p style="margin:0 0 18px;color:var(--silver)">Jardim do Vale, Jacareí — SP</p>
+        <h4>REDES SOCIAIS</h4>
+        <ul id="socials"></ul>
+      </div>
+    </div>
+    <p class="fine">© <span id="yr"></span> Caroline Vitória · Nail designer em Jacareí - SP</p>
+  </div>
+</footer>
 
-        <div class="footer-onde">
-            <h4>ONDE ESTAMOS</h4>
-            <p>Jardim do Vale, Jacareí — SP</p>
-        </div>
+<a class="fab wa" href="#" aria-label="Agendar pelo WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
-        <p class="copyright">&copy; Caroline Vitória &middot; Nail designer em Jacareí - SP</p>
-    </footer>
+<script>
+/* ============ CONFIGURAÇÕES: preencha aqui ============ */
+var CONFIG = {
+  whatsapp: '',                 // ex.: '5512999999999' (55 + DDD + número, só dígitos)
+  instagram: '',                // ex.: 'https://instagram.com/seuperfil'
+  outrasRedes: [],              // ex.: [{nome:'TikTok', url:'https://...'}]
+  nomeAtelie: '',               // deixe vazio para mostrar "Ateliê de beleza"
+  endereco: 'Avenida Gilberto Marcelino, Jardim do Vale, Jacareí - SP',
+  enderecoCompleto: '',         // quando confirmado: 'Av. Gilberto Marcelino, 000, Jardim do Vale, Jacareí - SP'
+  fotoHero: '', fotoSobre: ''   // URL ou imagem em base64 (data:image/...)
+};
+/* preço: número (ex.: 80) ou null para "Valor sob consulta" */
+var SERVICOS = [
+  {nome:'Unhas tradicionais', icon:'nail', preco:null, desc:'Cuidados essenciais para manter suas unhas bonitas e bem-cuidadas, com opções de esmaltação e acabamentos que combinam com seu estilo.'},
+  {nome:'Alongamento de unhas', icon:'long', preco:null, desc:'Alongamento para quem deseja unhas mais longas, com formato e acabamento personalizados para valorizar suas mãos.'},
+  {nome:'Banho de gel', icon:'gel', preco:null, desc:'Uma opção para quem busca um acabamento elegante e maior resistência para as unhas naturais, com brilho e aparência impecável.'},
+  {nome:'Manicure', icon:'hand', preco:null, desc:'Cuidados com as mãos e as unhas, valorizando a beleza, a higiene e o acabamento de cada detalhe.'},
+  {nome:'Pedicure', icon:'foot', preco:null, desc:'Cuidados dedicados aos pés e às unhas, proporcionando uma experiência de beleza e bem-estar.'}
+];
+/* galeria: {src:'...', cat:'Alongamento', alt:'descrição da foto'} */
+var GALERIA = [];
+var CATEGORIAS = ['Alongamento','Banho de gel','Unhas tradicionais','Manicure e pedicure','Nail art e decorações'];
+/* avaliações: {nome:'Maria S.', texto:'...', nota:5}  (somente reais e autorizadas) */
+var AVALIACOES = [];
+/* ======================================================= */
 
+var $ = function(s){return document.querySelector(s)};
+var ico = function(n){return '<svg><use href="#i-'+n+'"/></svg>'};
+function waLink(msg){
+  var n = (CONFIG.whatsapp||'').replace(/\D/g,'');
+  return 'https://wa.me/'+n+'?text='+encodeURIComponent(msg);
+}
+var MSG_GERAL = 'Olá, Caroline! Conheci seu trabalho pelo site e gostaria de agendar um horário. Você poderia me informar os horários disponíveis?';
+var MSG_SVC = function(s){return 'Olá, Caroline! Conheci seu trabalho pelo site e gostaria de agendar um horário para o procedimento de '+s+'. Você poderia me informar os horários disponíveis e o valor?'};
+
+/* slot de foto */
+function photoInner(src, alt, label){
+  return src ? '<img src="'+src+'" alt="'+alt+'" loading="lazy">'
+             : '<div>'+ico('cam')+label+'</div>';
+}
+document.querySelectorAll('[data-slot]').forEach(function(el){
+  var k = el.dataset.slot, src = k==='hero'?CONFIG.fotoHero:CONFIG.fotoSobre;
+  el.innerHTML = photoInner(src, k==='hero'?'Unhas com acabamento profissional':'Caroline Vitória, nail designer', k==='hero'?'Foto de destaque<br>das unhas':'Foto da Caroline');
+});
+
+/* serviços */
+$('#services').innerHTML = SERVICOS.map(function(s){
+  var p = s.preco ? 'R$ '+Number(s.preco).toFixed(2).replace('.',',') : 'Valor sob consulta';
+  return '<article class="card"><div class="photo" role="img" aria-label="Ilustração: '+s.nome+'">'+ico(s.icon)+'</div>'+
+    '<div class="body"><h3>'+s.nome+'</h3><p>'+s.desc+'</p><span class="price">'+p+'</span>'+
+    '<a class="btn sm" target="_blank" rel="noopener" href="'+waLink(MSG_SVC(s.nome))+'">AGENDAR PELO WHATSAPP</a></div></article>';
+}).join('');
+
+/* galeria */
+var filtro = 'Todas';
+function renderGal(){
+  var f = filtro==='Todas' ? GALERIA : GALERIA.filter(function(g){return g.cat===filtro});
+  var html = f.map(function(g){return '<div class="photo">'+photoInner(g.src,g.alt||'Trabalho da Caroline Vitória','')+'</div>'}).join('');
+  if(!f.length){
+    var n = filtro==='Todas'?6:3, lab = filtro==='Todas'?'Fotos dos trabalhos<br>em breve':filtro+'<br>fotos em breve';
+    for(var i=0;i<n;i++) html += '<div class="photo"><div>'+ico('cam')+lab+'</div></div>';
+  }
+  $('#gal').innerHTML = html;
+  [].forEach.call($('#tabs').children,function(b){b.setAttribute('aria-pressed', b.dataset.c===filtro)});
+}
+['Todas'].concat(CATEGORIAS).forEach(function(c){
+  var b = document.createElement('button');
+  b.className='tab'; b.textContent=c; b.dataset.c=c;
+  b.onclick=function(){filtro=c;renderGal()}; $('#tabs').appendChild(b);
+});
+renderGal();
+
+/* localização */
+$('#lLocal').textContent = CONFIG.nomeAtelie || 'Ateliê de beleza';
+$('#lEnd').textContent = CONFIG.endereco;
+$('#route').href = 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(CONFIG.enderecoCompleto||CONFIG.endereco);
+
+/* avaliações */
+$('#reviews').innerHTML = AVALIACOES.length
+  ? '<div class="rev">'+AVALIACOES.map(function(a){
+      return '<figure><blockquote>“'+a.texto+'”</blockquote><figcaption>'+a.nome+(a.nota?' · '+'★'.repeat(a.nota):'')+'</figcaption></figure>';
+    }).join('')+'</div>'
+  : '<div class="empty"><h3 style="font-size:1.9rem;margin-bottom:12px">Venha conhecer o trabalho da Caroline.</h3><p>Fale com ela pelo WhatsApp, tire suas dúvidas e descubra o cuidado que suas unhas merecem.</p><a class="btn wa" href="#">AGENDAR MEU HORÁRIO</a></div>';
+
+/* redes sociais */
+var redes = [];
+if(CONFIG.instagram) redes.push('<li><a href="'+CONFIG.instagram+'" target="_blank" rel="noopener">Instagram</a></li>');
+CONFIG.outrasRedes.forEach(function(r){redes.push('<li><a href="'+r.url+'" target="_blank" rel="noopener">'+r.nome+'</a></li>')});
+$('#socials').innerHTML = redes.length ? redes.join('') : '<li style="color:#7d7590">Instagram em breve</li>';
+
+/* links gerais de WhatsApp */
+document.querySelectorAll('a.wa').forEach(function(a){a.href=waLink(MSG_GERAL);a.target='_blank';a.rel='noopener'});
+
+/* menu mobile */
+var burger = $('#burger'), menu = $('#menu');
+burger.onclick = function(){var o = menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+$('#yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
